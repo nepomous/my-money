@@ -1,4 +1,4 @@
-import {useState, useEffect, useReducer} from 'react'
+import {useEffect, useReducer} from 'react'
 import axios from 'axios'
 
 const reducer = (state, action) => {
@@ -36,7 +36,5 @@ const useGet = url => {
   },[])
   return data
 }
-  
-
 
 export default useGet
