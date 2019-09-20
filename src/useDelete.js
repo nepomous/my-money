@@ -30,7 +30,7 @@ const useDelete = () => {
             .delete(url, data)
             .then(() =>{
                 dispatch({type: 'SUCCESS'})
-                console.log(res.data)
+                
         })
       }
     
