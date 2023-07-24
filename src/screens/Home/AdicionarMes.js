@@ -1,5 +1,5 @@
 import React from "react";
-import Rest from "./rest";
+import Rest from "../../utils/rest";
 
 const baseURL = "https://mymoney-nepomous.firebaseio.com/";
 

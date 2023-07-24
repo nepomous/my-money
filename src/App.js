@@ -1,36 +1,18 @@
 import React from "react";
-import Rest from "./rest";
-import { objectMethod } from "@babel/types";
 import Header from "./components/Header";
-import Meses from "./Meses";
-import AdicionarMes from "./AdicionarMes";
-
-const baseURL = "https://mymoney-nepomous.firebaseio.com/";
-
-const { useGet, usePost, useDelete } = Rest(baseURL);
+import Home from "./screens/Home";
+import Movimentacoes from "./screens/Movimentacoes";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
-  const data = useGet("meses/");
-  //const data = useGet('movimentacoes/2019-08')
-  //const [postData, post] = usePost('movimentacoes/2019-08')
-  //const [deleteData, remove] = useDelete()
-
-  const saveNew = () => {
-    // post({valor:10, descricao:'ola' })
-  };
-
-  const doRemove = () => {
-    // remove('movimentacoes/2019-08/-Lox2YojSKR4Pjeb7Lg-')
-  };
-
   return (
-    <div>
-      <div className="container">
+    <Router>
+      <div>
         <Header />
-        <AdicionarMes />
-        <Meses />
+        <Route path="/" exact component={Home} />
+        <Route path="/movimentacoes/:data" exact component={Movimentacoes} />
       </div>
-    </div>
+    </Router>
   );
 }
 
